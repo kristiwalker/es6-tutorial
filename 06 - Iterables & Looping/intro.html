@@ -23,10 +23,12 @@
 
   cuts.shop = 'MM MEats';
 
+  // for iterating through objects but confusing syntax
   // for (let i = 0; i < cuts.length; i++) {
   //   console.log(cuts[i]);
   // }
 
+  // for iterating through arrays but can't abort loop or skip something
   // cuts.forEach((cut) => {
   //   console.log(cut);
   //   if(cut === 'Brisket') {
@@ -34,10 +36,12 @@
   //   }
   // });
 
+  // f
   // for (const index in cuts) {
   //   console.log(cuts[index]);
   // }
 
+  // can use for any data except objects 
   for (const cut of cuts) {
     if(cut === 'Brisket') {
       continue;

@@ -11,9 +11,11 @@
 </head>
 <body>
 <script>
+  // es6 rest operator (...values) takes the rest of the values that are passed in an argument and puts them in an array!!
   function highlight(strings, ...values) {
     let str = '';
     strings.forEach((string, i) => {
+        // the || says "if values[i] is undefined, put a blank string"
       str += `${string} <span contenteditable class="hl">${values[i] || ''}</span>`;
     });
     return str;
@@ -22,6 +24,7 @@
   const name = 'Snickers';
   const age = 100;
 
+  // here we write out the string + templates in their simplest form, then use a function above to build out a more complex string with customizable traits (ex: span highlight)
   const sentence = highlight`My dog's name is ${name} and he is ${age} years old`;
   document.body.innerHTML = sentence;
   console.log(sentence);

@@ -10,11 +10,19 @@
   const [name, id, website] = details;
   console.log(name, id, website);
 
+  // the above is the new way of writing:
+  const name = details[0];
+  const id = details[1];
+  const website = details[2];
+
+  // uses the same array destructuring method above, but by splitting a string
   const data = 'Basketball,Sports,90210,23,wes,bos,cool';
+  // since we didn't define anything for the 3 extra items, they don't get put into the array
   const [itemName, category, sku, inventory] = data.split(',');
 
+  // method for individually defining a few of the strings in a list, and then mass defining the rest
+  // ... is called the rest operator (which just gives you the rest, literally)
   const team = ['Wes', 'Harry', 'Sarah', 'Keegan', 'Riker'];
-
   const [captain, assistant, ...players] = team;
 
 </script>

@@ -6,12 +6,41 @@
 </head>
 <body>
 <script>
-  function calculateBill(total, tax = 0.13, tip = 0.15) {
-    return total + (total * tax) + (total * tip);
+
+  // es5 way
+  function calculateBill(total, tax, tip) {
+      return total + (total * tax) + (total * tip);
+
+      // ways to set default for tax/tip if it's not customly defined
+      if (tax === undefined) {
+          tax = 0.13;
+      }
+
+      if (tip === undefined) {
+          tip = 0.15;
+      }
+
+     // this is another, shorter way to do the same defaulting as above.
+     tax = tax || 0.13;
+
   }
 
-  const totalBill = calculateBill(100, undefined, 0.25);
+  // es6 way
+  // can define defaults in actual function
+  function calculateBill(total, tax = 0.13, tip = 0.15) {
+      return total + (total * tax) + (total * tip);
+  }
+
+  // can pass undefined for situations where you want it to assume the default defined in the function initially
+  const totalBill = calculateBill(100, undefined, 0.25));
   console.log(totalBill);
+
+  // function calculateBill(total, tax = 0.13, tip = 0.15) {
+  //   return total + (total * tax) + (total * tip);
+  // }
+  //
+  // const totalBill = calculateBill(100, undefined, 0.25);
+  // console.log(totalBill);
 </script>
 </body>
 </html>

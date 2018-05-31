@@ -22,6 +22,7 @@
     JS: 'JavaScript'
   };
 
+  // this grabs all of the templates/values in your string, maps over them and uses conditionals to determine if they should have an html title or not
   function addAbbreviations(strings, ...values) {
     const abbreviated = values.map(value => {
       if(dict[value]) {
@@ -30,6 +31,7 @@
       return value;
     });
 
+    // reduce takes two arguments: a function, and what you start with
     return strings.reduce((sentence, string, i) => {
       return `${sentence}${string}${abbreviated[i] || ''}`;
     }, '');
@@ -37,6 +39,7 @@
 
   const first = 'Wes';
   const last = 'Bos';
+  // addAbbreviations is considered a tagged template that loops through and customizes in certain spots according to the function above
   const sentence = addAbbreviations`Hello my name is ${first} ${last} and I love to code ${'HTML'}, ${'CSS'} and ${'JS'}`;
 
   const bio = document.querySelector('.bio');

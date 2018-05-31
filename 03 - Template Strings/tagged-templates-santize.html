@@ -19,7 +19,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.2/purify.min.js"></script>
 <script>
   function sanitize(strings, ...values) {
+    // grabs all the inputs (ex: from const first and const aboutMe) of the user and reduces it together
     const dirty = strings.reduce((prev, next, i) => `${prev}${next}${values[i] || ''}`, '');
+    console.log(dirty);
+    // cleans up any js that the user may have tried to input in the above reduced string
     return DOMPurify.sanitize(dirty);
   }
 

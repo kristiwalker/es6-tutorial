@@ -1,0 +1,37 @@
+# variables
+    - const
+    - var
+    - let
+    - es6 trick to swap values of variables
+      [first, second] = [second, first];
+
+# arrow functions
+    - `this` scopes to the parent function with arrow functions, meaning you don't need to do var self = this, usually.
+    - explicit and implicit returns
+    - can't name arrow functions, but can put them in a variable
+    - can define default arguments
+
+# template strings
+    - can make dictionaries (arry/object of props/values) to loop
+    - can use tagged templates to loop through dictionary and customize in certain spots according to a certain function
+    - es6 rest operator (...values) takes the rest of the values that are passed in an argument and puts them in an array
+    - templating similar to handlebars
+    - can use with ternary operator to say "if this, then that, otherwise nothing"
+
+# string Methods (simple queries)
+    - .startsWith()
+    - .endsWith()
+    - .includes()
+    - .repeat()
+
+# Destructuring
+    - can pass objects to functions ({tip: 100, total: 200})
+    - can provide a property for values in an array to reference them rather than saying array[0], array[3] to retrieve them
+    - const { first, last, twitter } = person;
+        says: give me a var called first, a var called last, and one called twitter, and take them from person
+
+# iteratbles & Looping
+    - can abort and skip things
+    - less confusing syntax
+    - using [i, cut] allows us to destructure the data
+    - `for in` is probably best for looping objects since for of needs an Object.keys

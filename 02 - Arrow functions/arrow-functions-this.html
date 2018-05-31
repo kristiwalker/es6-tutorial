@@ -62,19 +62,47 @@
 
   <script>
     const box = document.querySelector('.box');
+
+    // old es5 function for logging this
     box.addEventListener('click', function() {
-      let first = 'opening';
-      let second = 'open';
-
-      if(this.classList.contains(first)) {
-        [first, second] = [second, first];
-      }
-
-      this.classList.toggle(first);
-      setTimeout(() => {
         console.log(this);
-        this.classList.toggle(second);
-      }, 500);
+    });
+
+    // when you use an arrow function, the value of this is not rebound inside of that function. It's inherited from the parent scope. In this case, the parent scope is the window.
+    box.addEventListener('click', () => {
+        console.log(this);
+    });
+
+    // es5 example
+    box.addEventListener('click', function() {
+        // used to have to store this in a variable to use in nested functions to maintain a scope
+        var self = this;
+        // toggles opening class
+        this.classList.toggle('opening');
+        setTimeout(function() {
+            self.classList.toggle('open');
+        });
+    });
+
+    // es6 example
+    box.addEventListener('click', function() {
+        // toggles opening class
+        let first = 'opening';
+        let second = 'open';
+
+        // lets us change the order depending on whether the box is opening or closing
+        if (this.classList.contains(first)) {
+            // es6 trick to swap values of variables
+            [first, second] = [second, first];
+        }
+
+        console.log(first);
+
+        this.classList.toggle(first);
+        setTimeout(() => {
+            // arrow function allows us to use this here because it's scoped to the parent function
+            this.classList.toggle(second);
+        }, 500);
     });
   </script>
 

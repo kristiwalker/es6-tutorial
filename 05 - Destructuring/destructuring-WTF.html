@@ -9,6 +9,10 @@
   // Object Destructuring with variable renaming & default values
   const { w: width = 400, h: height = 500 } = { w: 800 }
 
+  // the above is a simpler way of writing this:
+  const width = { w: 800 };
+  const { w: width = 400, h: height = 500 } = width;
+
 </script>
 </body>
 </html>

@@ -15,14 +15,21 @@ const make = 'BMW';
 const model = 'x5';
 const colour = 'Royal Blue';
 
+// here we'll explore some string methods that makes it easier for us to query strings
+
 // .startsWith()
+course.startsWith('RFB'); // will return true, but is case sensitive
+course.startsWith('AC', 3); // skips the first three characters and then looks for the string
 
 // .endsWith()
+flightNumber.endsWith('jz'); // true
+accountNumber.endsWith('RT', 11); // ignores the first 11 numbers, true
 
 // .includes()
+flightNumber.includes('AC') // works anywhere within the string
 
 // .repeat()
-
+// allows you to take a string and repeat it however many times you would like
 function leftPad(str, length = 20) {
   return `→ ${' '.repeat(length - str.length)}${str}`;
 }

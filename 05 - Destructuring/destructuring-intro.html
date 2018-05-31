@@ -14,6 +14,12 @@
     twitter: '@wesbos'
   };
 
+  // old way of getting top-level variables
+  const first = person.first;
+  const last = person.last;
+
+  // new way with destructuring syntax
+  // says: give me a var called first, a var called last, and one called twitter, and take them from person
   const { first, last, twitter } = person;
 
   const wes = {
@@ -30,9 +36,20 @@
     }
   };
 
+  // old school way
+  const twitter = wes.links.social.twitter;
+  const facebook = wes.links.social.twitter;
+
+  // new way
+  const { twitter, facebook } = wes.links.social;
+
+  // renaming variables with new destructuring
+  // this gets the twitter property but calls it tweet
   const { twitter: tweet, facebook: fb } = wes.links.social;
 
+  // setting defaults
   const settings = { width: 300, color: 'black' }  // height, fontSize
+  // these are default values unless redefined above (ex: width will be 300 but height will be 100)
   const { width = 100, height = 100, color = 'blue', fontSize = 25} = settings;
 
 </script>

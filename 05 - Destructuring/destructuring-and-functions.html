@@ -16,10 +16,12 @@
     return converted;
   }
 
+  // we add the curly brackets here to make the order of the arguments independent (so they don't have to be in a particular order). Instead of worrying about their index, you can just call them by their name
   function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
     return total + (tip * total) + (tax * total);
   }
 
+  // passing in an object to the function, that then destructures it and defaults for anything we leave out in the object
   const bill = tipCalc({ tip: 0.20, total: 200 });
   console.log(bill);
 
