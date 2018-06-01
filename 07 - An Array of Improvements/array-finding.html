@@ -178,8 +178,11 @@
      }
   ];
   const code = 'VBgtGQcSf';
+  // loops over posts and equates to an if statement (if post.code === code, return that as the "post" argument
+  // filter would do an array and look for every instance
   const post = posts.find(post => post.code === code);
 
+  // loops posts and finds the post equal to "code" and returns the index of that item
   const postIndex = posts.findIndex(post => post.code === code);
   console.log(postIndex);
 

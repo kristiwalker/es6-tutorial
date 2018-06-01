@@ -11,22 +11,26 @@
   </div>
 <body>
 <script>
-  // const people = document.querySelectorAll('.people p');
-  // const peopleArray = Array.from(people, person => {
-  //   console.log(person);
-  //   return person.textContent;
-  // });
-  // console.log(peopleArray);
+  const people = document.querySelectorAll('.people p');
+  // Array.from allows us to take a nodeList (the contents of the people div) and put that content into an array
+  // .from can take in a map function, so people is the nodeList that it makes into an array, and person is the actual dom node (or item in the array)
+  const peopleArray = Array.from(people, person => {
+    console.log(person);
+    return person.textContent;
+  });
+  console.log(peopleArray);
 
-  // // const names = people.map(person => person.textContent);
+  // const names = people.map(person => person.textContent);
 
   function sumAll() {
+    // arguments aren't an array initially so we need to do from to make them one
     const nums = Array.from(arguments);
     return nums.reduce((prev, next) => prev + next, 0);
   }
 
   sumAll(2, 34, 23, 234, 234, 234234, 234234, 2342);
 
+  // create an array out of arguments in one simple line
   const ages = Array.of(12,4,23,62,34);
   console.log(ages);
 
