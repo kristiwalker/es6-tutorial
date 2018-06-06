@@ -10,6 +10,9 @@
   const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
   const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
 
+  // old es5 way:
+  // const pizzas = featured.concat(specialty);
+
   const pizzas = [...featured, 'veg', ...specialty];
   const fridayPizzas = [...pizzas];
 
